@@ -7,12 +7,17 @@
 
 import Foundation
 
-struct CocktailModel: Codable {
+struct DrinksDTO: Codable {
+    let drinks: [DrinkModel]?
+}
+
+// MARK: - DrinkModel
+struct DrinkModel: Codable {
     let name: String
     let imageUrl: String
 
     enum CodingKeys: String, CodingKey{
-        case name = "name"
-        case imageUrl = "imageUrl"
+        case name = "strDrink"
+        case imageUrl = "strDrinkThumb"
     }
 }

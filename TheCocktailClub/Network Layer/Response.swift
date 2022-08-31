@@ -7,8 +7,15 @@
 
 import Foundation
 
-struct Response<T>: Codable {
-    let data: Data?
+struct Response<T: Codable>: Codable {
     let error: String?
-    let success: Bool
+    let data: T?
+
+    var localizedError: String {
+        return error ?? "error.gen".localized
+    }
+}
+
+struct Empty: Codable {
+
 }

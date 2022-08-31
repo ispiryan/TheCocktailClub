@@ -7,28 +7,28 @@
 
 import Foundation
 
-struct DrinksViewModel {
+final class DrinksViewModel {
 
-    var drinks: [CocktailModel] = [CocktailModel]()
+    var drinks = [DrinkModel]()
+    let isLoading = Box(false)
+    let errorMessage = Box("")
 
-    func getDrinks(searchText: String, completion: @escaping (_ result: [CocktailModel]) -> Void) {
-
-        let endPoint = EndPoint(urlString: "search.php?s=\"" + searchText)
-
-        guard let url = endPoint.url else {
-            completion([CocktailModel]())
-            return
-        }
-
-        let networkService = NetworkService()
+    func getDrinks(searchText: String) {
         let service = NetworkService()
+        let endpoint: DrinksEndpoint = .searchDrinks(searchText: searchText)
+        isLoading.value = true
 
-        service.request(url: url, dataType: [CocktailModel].self) { result, error in
-
+        service.request(endpoint: endpoint, dataType: DrinksDTO.self) { [weak self] result, error in
+            guard let self = self else { return }
+            if let error = error {
+                self.errorMessage.value = error
+            } else if let drinks = result?.drinks {
+                self.drinks = drinks
+            } else {
+                self.errorMessage.value = "drinks.noDrinks".localized
+                self.drinks.removeAll()
+            }
+            self.isLoading.value = false
         }
-//        service.request(url: endPoint.url, dataType: [CocktailModel].Type) { [weak self] result in
-//
-//        }
-        
     }
 }

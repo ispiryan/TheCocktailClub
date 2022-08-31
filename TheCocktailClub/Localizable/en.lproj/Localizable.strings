@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  TheCocktailClub
+
+  Created by Aram Ispiryan on 31.08.22.
+  
+*/
+
+// MARK: - Common
+"common.ok" = "OK";
+
+// MARK: - SearchBar
+"searchBar.placeholder" = "Search for the Cocktail...";
+
+
+// MARK: - Errors
+"error.decoding" = "Unable to load data.";
+"error.gen" = "Something went wrong. Try again later.";
+
+
+// MARK: - Drinks
+"drinks.noDrinks" = "No drinks found.";
