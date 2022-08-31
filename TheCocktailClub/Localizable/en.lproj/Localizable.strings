@@ -9,6 +9,9 @@
 // MARK: - Common
 "common.ok" = "OK";
 
+// MARK: - SearchBar
+"searchBar.placeholder" = "Search for the Cocktail...";
+
 
 // MARK: - Errors
 "error.decoding" = "Unable to load data.";

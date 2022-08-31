@@ -15,7 +15,7 @@ enum DrinksEndpoint: Endpoint {
     var path: String {
         switch self {
         case .searchDrinks(let searchText):
-            return searchPath + searchText
+            return searchPath + searchText.percentEncoded
         }
     }
 

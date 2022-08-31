@@ -11,4 +11,8 @@ extension String {
     var localized: String {
         NSLocalizedString(self, comment: "")
     }
+
+    var percentEncoded: String {
+        return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+    }
 }

@@ -27,6 +27,8 @@
 		97FF676528BF767A00D8EADE /* UIViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FF676428BF767A00D8EADE /* UIViewController+UIAlertController.swift */; };
 		97FF676928BF797700D8EADE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FF676828BF797700D8EADE /* Box.swift */; };
 		97FF676C28BF942300D8EADE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 97FF676E28BF942300D8EADE /* Localizable.strings */; };
+		97FF677228BFAA9E00D8EADE /* DrinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FF677128BFAA9E00D8EADE /* DrinkCollectionViewCell.swift */; };
+		97FF677528BFE02A00D8EADE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 97FF677428BFE02A00D8EADE /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,7 @@
 		97FF676428BF767A00D8EADE /* UIViewController+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertController.swift"; sourceTree = "<group>"; };
 		97FF676828BF797700D8EADE /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		97FF676D28BF942300D8EADE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		97FF677128BFAA9E00D8EADE /* DrinkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97FF677528BFE02A00D8EADE /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +88,7 @@
 		97921D7228BE66AB0038A564 /* TheCocktailClub */ = {
 			isa = PBXGroup;
 			children = (
+				97FF677028BFAA7600D8EADE /* Views */,
 				97921DAF28BF57D90038A564 /* Classes */,
 				97921DA728BF537F0038A564 /* Extensions */,
 				97921D9028BE69B30038A564 /* Network Layer */,
@@ -189,6 +194,14 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		97FF677028BFAA7600D8EADE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97FF677128BFAA9E00D8EADE /* DrinkCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,6 +218,9 @@
 			dependencies = (
 			);
 			name = TheCocktailClub;
+			packageProductDependencies = (
+				97FF677428BFE02A00D8EADE /* SDWebImage */,
+			);
 			productName = TheCocktailClub;
 			productReference = 97921D7028BE66AB0038A564 /* TheCocktailClub.app */;
 			productType = "com.apple.product-type.application";
@@ -233,6 +249,9 @@
 				Base,
 			);
 			mainGroup = 97921D6728BE66AB0038A564;
+			packageReferences = (
+				97FF677328BFE02A00D8EADE /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 97921D7128BE66AB0038A564 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -277,6 +296,7 @@
 				97921D9328BE69D20038A564 /* NetworkService.swift in Sources */,
 				97921D8D28BE68130038A564 /* DrinksViewModel.swift in Sources */,
 				97921DAD28BF55C40038A564 /* Router.swift in Sources */,
+				97FF677228BFAA9E00D8EADE /* DrinkCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +524,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		97FF677328BFE02A00D8EADE /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		97FF677428BFE02A00D8EADE /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97FF677328BFE02A00D8EADE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 97921D6828BE66AB0038A564 /* Project object */;
 }
