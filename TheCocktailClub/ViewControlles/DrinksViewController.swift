@@ -47,13 +47,18 @@ final class DrinksViewController: UIViewController {
     private func setupSearchBar() {
         searchBar.delegate = self
         searchBar.placeholder = "searchBar.placeholder".localized
-}
+        searchBar.returnKeyType = .done
+    }
 }
 
 // MARK: - UISearchBarDelegate
 extension DrinksViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.getDrinks(searchText: searchBar.text ?? "")
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 
